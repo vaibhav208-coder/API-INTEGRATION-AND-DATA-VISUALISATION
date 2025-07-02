@@ -1,5 +1,9 @@
 # API-INTEGRATION-AND-DATA-VISUALISATION
-Name: Vansh Rathore Intern ID :CT04DL1392 DOMAIN:Python Programming DURATION:4 WEEKS MENTOR Neela Santhosh Kumar
+Name: VAIBHAV DUBEY
+Intern-ID : CT04DL1273
+DOMAIN: Python Programming
+DURATION: 4 WEEKS
+MENTOR: Neela Santhosh Kumar
 
 Description: Project Title: Weather Data Visualization Dashboard Using OpenWeatherMap API
 
