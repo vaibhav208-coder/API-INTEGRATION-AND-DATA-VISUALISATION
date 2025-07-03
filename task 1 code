@@ -1,1 +1,36 @@
+import requests
+import matplotlib.pyplot as plt
 
+# OpenWeatherMap API key
+API_KEY = "25eec6dfab40ebc11601ff5846d02bdb"
+
+# List of cities to fetch weather data for
+cities = ["kanpur", "lucknow", "agra", "varanasi", "delhi"]
+
+# Store weather data
+weather_data = []
+
+# Fetch weather data from OpenWeatherMap API
+for city in cities:
+    url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric"
+    response = requests.get(url)
+    data = response.json()
+
+    if response.status_code == 200:
+        temp = data["main"]["temp"]
+        weather_data.append((city, temp))
+    else:
+        print(f"Could not get data for {city}")
+
+# Separate city names and temperatures for plotting
+city_names = [item[0] for item in weather_data]
+temperatures = [item[1] for item in weather_data]
+
+# Create a bar chart using matplotlib
+plt.figure(figsize=(15,10))
+plt.bar(city_names, temperatures, color='cyan')
+plt.title("Current Temperature in Cities (°C)")
+plt.xlabel("City")
+plt.ylabel("Temperature (°C)")
+plt.grid(True)
+plt.show()
